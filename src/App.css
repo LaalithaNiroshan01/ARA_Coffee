@@ -1,0 +1,6 @@
+.main-wrapper {
+  width: 100%;
+  background-color: var(--color-dark);
+  min-height: 100vh;
+  color: var(--color-cream);
+}
