@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 import './Navbar.css';
 import logoImg from '../images/Logo.png';
+
+gsap.registerPlugin(ScrollToPlugin);
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  
   const navRef = useRef(null);
 
   useEffect(() => {
@@ -32,6 +35,18 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const handleSmoothScroll = (e, target) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false); // Close mobile menu if open
+    
+    // Smooth scroll using GSAP
+    gsap.to(window, {
+      duration: 1.5,
+      scrollTo: { y: target, offsetY: 70 }, // offset for fixed navbar
+      ease: "power3.inOut"
+    });
+  };
+
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'Story', href: '#story' },
@@ -43,7 +58,7 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`} ref={navRef}>
       <div className="navbar-container">
         <div className="navbar-logo">
-          <a href="#home">
+          <a href="#home" onClick={(e) => handleSmoothScroll(e, '#home')}>
             <img src={logoImg} alt="ARA Coffee" />
           </a>
         </div>
@@ -52,7 +67,9 @@ const Navbar = () => {
         <ul className="navbar-links">
           {navLinks.map((link) => (
             <li key={link.name}>
-              <a href={link.href}>{link.name}</a>
+              <a href={link.href} onClick={(e) => handleSmoothScroll(e, link.href)}>
+                {link.name}
+              </a>
             </li>
           ))}
         </ul>
@@ -70,7 +87,7 @@ const Navbar = () => {
         <ul className="mobile-nav-links">
           {navLinks.map((link) => (
             <li key={link.name}>
-              <a href={link.href} onClick={() => setIsMobileMenuOpen(false)}>
+              <a href={link.href} onClick={(e) => handleSmoothScroll(e, link.href)}>
                 {link.name}
               </a>
             </li>
