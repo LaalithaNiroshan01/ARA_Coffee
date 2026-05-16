@@ -29,8 +29,8 @@ const Footer = () => {
           ease: 'power3.out',
           scrollTrigger: {
             trigger: footerRef.current,
-            start: 'top 90%',
-            toggleActions: 'play none none reverse'
+            start: 'top 95%',
+            toggleActions: 'play reverse play reverse'
           }
         }
       );
@@ -46,8 +46,8 @@ const Footer = () => {
           ease: 'power3.out',
           scrollTrigger: {
             trigger: '.footer-links',
-            start: 'top 95%',
-            toggleActions: 'play none none reverse'
+            start: 'top 100%',
+            toggleActions: 'play reverse play reverse'
           }
         }
       );

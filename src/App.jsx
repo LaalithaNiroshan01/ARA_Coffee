@@ -6,6 +6,7 @@ import Hero from './components/Hero'
 import Marquee from './components/Marquee'
 import OurStory from './components/OurStory'
 import Products from './components/Products'
+import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 import './App.css'
@@ -33,6 +34,7 @@ function App() {
       <Marquee text="ARA COFFEE • PREMIUM ROASTS • ETHICALLY SOURCED • EST. 2024 • CRAFTED IN SRI LANKA" speed={40} />
       <OurStory />
       <Products />
+      <Contact />
       <Footer />
     </div>
   )

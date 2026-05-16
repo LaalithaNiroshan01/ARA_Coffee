@@ -32,9 +32,8 @@ const OurStory = () => {
             ease: 'power3.out',
             scrollTrigger: {
               trigger: row,
-              start: 'top 80%',
-              end: 'top 20%',
-              toggleActions: 'play none none reverse'
+              start: 'top 85%',
+              toggleActions: 'play reverse play reverse'
             }
           }
         );
@@ -51,9 +50,8 @@ const OurStory = () => {
             ease: 'power3.out',
             scrollTrigger: {
               trigger: row,
-              start: 'top 80%',
-              end: 'top 20%',
-              toggleActions: 'play none none reverse'
+              start: 'top 85%',
+              toggleActions: 'play reverse play reverse'
             }
           }
         );

@@ -26,8 +26,9 @@ const Products = () => {
           ease: 'back.out(1.7)',
           scrollTrigger: {
             trigger: '.products-header',
-            start: 'top 80%',
-            toggleActions: 'play none none reverse'
+            start: 'top 85%',
+            end: 'bottom 15%',
+            toggleActions: 'play reverse play reverse'
           }
         }
       );
@@ -48,8 +49,9 @@ const Products = () => {
           ease: 'power4.out',
           scrollTrigger: {
             trigger: '.products-grid',
-            start: 'top 85%',
-            toggleActions: 'play none none reverse'
+            start: 'top 90%',
+            end: 'bottom 10%',
+            toggleActions: 'play reverse play reverse'
           }
         }
       );
