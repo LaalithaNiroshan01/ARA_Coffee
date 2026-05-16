@@ -1,11 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import './Navbar.css';
+import logoImg from '../images/Logo.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const navRef = useRef(null);
+
   useEffect(() => {
+    // Initial entrance animation
+    gsap.fromTo(navRef.current,
+      { y: -100, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1.2, ease: 'power3.out', delay: 0.5 }
+    );
+
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setIsScrolled(true);
@@ -30,10 +40,12 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`} ref={navRef}>
       <div className="navbar-container">
         <div className="navbar-logo">
-          <a href="#home">ARA</a>
+          <a href="#home">
+            <img src={logoImg} alt="ARA Coffee" />
+          </a>
         </div>
 
         {/* Desktop Menu */}
