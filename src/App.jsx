@@ -1,10 +1,15 @@
 import { useEffect } from 'react'
-import gsap from 'gsap'
 import Lenis from 'lenis'
+import Navbar from './components/Navbar'
+import CustomCursor from './components/CustomCursor'
+import Marquee from './components/Marquee'
+import Hero from './components/Hero'
+
+import './App.css'
 
 function App() {
   useEffect(() => {
-    // Initialize Lenis for smooth scrolling
+    // Lenis smooth scroll
     const lenis = new Lenis()
 
     function raf(time) {
@@ -14,24 +19,28 @@ function App() {
 
     requestAnimationFrame(raf)
 
-    // Example GSAP Animation
-    gsap.fromTo('.heading', { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1, ease: 'power3.out' })
-
     return () => {
       lenis.destroy()
     }
   }, [])
 
   return (
-    <div className="app-container">
-      <h1 className="heading" style={{ fontFamily: 'Playfair Display, serif' }}>
-        React + Vite Setup
-      </h1>
-      <p style={{ fontFamily: 'Inter, sans-serif' }}>
-        Configured with GSAP and Lenis for smooth animations and scrolling.
-      </p>
+    <div className="main-wrapper">
+      <CustomCursor />
+      <Navbar />
+
+      <Hero />
+
+      <Marquee text="ARA COFFEE • PREMIUM ROASTS • ETHICALLY SOURCED • EST. 2024 • CRAFTED IN SRI LANKA" speed={40} />
+
+      {/* Spacer to allow scrolling */}
+      <div style={{ height: '150vh' }} />
     </div>
   )
 }
 
 export default App
+
+
+
+
