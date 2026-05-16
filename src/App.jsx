@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import Lenis from 'lenis'
 import Navbar from './components/Navbar'
-import CustomCursor from './components/CustomCursor'
+
 import './App.css'
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="main-wrapper">
-      <CustomCursor />
+
       <Navbar />
       
       {/* Placeholder to allow scrolling and test the Navbar blur */}
