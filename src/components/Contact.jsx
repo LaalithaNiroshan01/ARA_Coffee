@@ -25,7 +25,8 @@ const Contact = () => {
           scrollTrigger: {
             trigger: titleRef.current,
             start: 'top 85%',
-            toggleActions: 'play none none reverse'
+            end: 'bottom 15%',
+            toggleActions: 'play reverse play reverse'
           }
         }
       );
@@ -42,8 +43,9 @@ const Contact = () => {
           ease: 'power3.out',
           scrollTrigger: {
             trigger: '.contact-form-container',
-            start: 'top 80%',
-            toggleActions: 'play none none reverse'
+            start: 'top 85%',
+            end: 'bottom 15%',
+            toggleActions: 'play reverse play reverse'
           }
         }
       );
@@ -60,8 +62,9 @@ const Contact = () => {
           ease: 'power3.out',
           scrollTrigger: {
             trigger: '.contact-info',
-            start: 'top 80%',
-            toggleActions: 'play none none reverse'
+            start: 'top 85%',
+            end: 'bottom 15%',
+            toggleActions: 'play reverse play reverse'
           }
         }
       );
