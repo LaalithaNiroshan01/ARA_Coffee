@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import './Hero.css';
+import heroVideo from '../video/hero.mp4';
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -70,6 +71,14 @@ const Hero = () => {
   return (
     <section className="hero" ref={heroRef}>
       <div className="hero-bg" ref={bgRef}>
+        <video 
+          className="hero-video" 
+          src={heroVideo} 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+        ></video>
         <div className="hero-overlay"></div>
       </div>
 
@@ -94,10 +103,12 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="scroll-indicator" ref={scrollRef}>
-        <span className="scroll-text">Explore</span>
-        <div className="scroll-line">
-          <div className="scroll-fill"></div>
+      <div className="scroll-indicator-wrapper">
+        <div className="scroll-indicator" ref={scrollRef}>
+          <span className="scroll-text">Explore</span>
+          <div className="scroll-line">
+            <div className="scroll-fill"></div>
+          </div>
         </div>
       </div>
     </section>
