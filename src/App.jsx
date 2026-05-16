@@ -1,6 +1,9 @@
 import { useEffect } from 'react'
 import Lenis from 'lenis'
 import Navbar from './components/Navbar'
+import CustomCursor from './components/CustomCursor'
+import Hero from './components/Hero'
+import Marquee from './components/Marquee'
 
 import './App.css'
 
@@ -21,18 +24,16 @@ function App() {
 
   return (
     <div className="main-wrapper">
-
+      <CustomCursor />
       <Navbar />
+      <Hero />
+      <Marquee text="ARA COFFEE • PREMIUM ROASTS • ETHICALLY SOURCED • EST. 2024 • CRAFTED IN SRI LANKA" speed={40} />
       
-      {/* Placeholder to allow scrolling and test the Navbar blur */}
-      <div style={{ height: '200vh', padding: '100px 5vw' }}>
-        <h1 style={{ fontFamily: 'Playfair Display, serif', marginTop: '150px' }}>
-          Navbar Only View
-        </h1>
-        <p>Scroll down to see the Navbar blur effect.</p>
-      </div>
+      {/* Additional space to test scrolling */}
+      <div style={{ height: '100vh' }} />
     </div>
   )
+
 }
 
 export default App
