@@ -9,8 +9,6 @@ import Products from './components/Products'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
-import './App.css'
-
 function App() {
   useEffect(() => {
     // Keep Lenis for the smooth scroll feel
@@ -27,7 +25,7 @@ function App() {
   }, [])
 
   return (
-    <div className="main-wrapper">
+    <div className="main-wrapper w-full bg-coffee-dark">
       <CustomCursor />
       <Navbar />
       <Hero />
@@ -38,8 +36,6 @@ function App() {
       <Footer />
     </div>
   )
-
 }
 
 export default App
-
