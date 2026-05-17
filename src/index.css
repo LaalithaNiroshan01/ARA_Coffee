@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --color-dark: #0D0D0D;
   --color-cream: #E5E1D8;
@@ -41,6 +45,20 @@ body {
   transition: transform 0.1s ease-out;
 }
 
+/* Custom Cursor Outline */
+.custom-cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(229, 225, 216, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transition: transform 0.15s ease-out, background-color 0.3s ease, border-color 0.3s ease;
+}
+
 /* Lenis recommended CSS */
 html.lenis, html.lenis body {
   height: auto;
@@ -60,4 +78,26 @@ html.lenis, html.lenis body {
 
 .lenis.lenis-smooth iframe {
   pointer-events: none;
+}
+/* Contact Form — underline-only inputs */
+.contact-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(229, 225, 216, 0.2);
+  color: #E5E1D8;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  padding: 10px 0;
+  outline: none;
+  transition: border-bottom-color 0.3s ease;
+  resize: none;
+}
+
+.contact-input:focus {
+  border-bottom-color: #C4A484;
+}
+
+.contact-input::placeholder {
+  color: transparent;
 }
