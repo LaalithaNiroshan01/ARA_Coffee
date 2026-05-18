@@ -92,7 +92,7 @@ ARA_Coffee/
 
 4. **Open in browser**
    ```
-   http://localhost:5174
+   http://localhost:3000
    ```
 
 ### Build for Production
